@@ -1,0 +1,419 @@
+<!DOCTYPE>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Como planejar um projeto WordPress</title>
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if( window.location.search.match( /print-pdf/gi ) ) {
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = 'css/print/pdf.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        }
+    </script>
+</head>
+<body>
+
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h2>Como planejar um <br>projeto WordPress</h2>
+        </section>
+
+        <section>
+            <div class="wrap">
+                <img src="assets/leo.jpeg" alt="" title="Leo Germani" class="photo">
+                <div class="description">
+                    <p><b>Leo[nardo] Germani</b></p><br>
+                    <ul>
+                        <li>Sócio do hacklab
+                            <ul>
+                                <li>Catraca Livre</li>
+                                <li>Virada Cultural</li>
+                            </ul>
+                        </li>
+                        <li>Desenvolvedor WordPress</li>
+                        <li>Participação na comunidade e organização dos primeiros WordCamps</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <section>
+                <h2>Guia prático</h2>
+            </section>
+            <section>
+                <h2>WordPress é uma ferramenta poderosa</h2>
+            </section>
+            <section>
+                <h2>Mas...</h2>
+                <img src="assets/gambi-1.jpg" alt="" title="Leo Germani" >
+            </section>
+            <section>
+                <h2>Ou...</h2>
+                <img src="assets/gambi-2.jpg" alt="" title="Leo Germani" >
+            </section>
+            <section>
+                <h2>O que queremos</h2>
+                <img src="assets/arrumado.png" alt="" title="Leo Germani" >
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Estrutura do WP</h2>
+            </section>
+            <section>
+                
+                <table>
+                
+                    <thead>
+                        <tr>
+                            <th>Post Types</th>
+                            <th>Taxonomias</th>
+                            <th>Meta-dados</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                        
+                            <td>Posts</td>
+                            <td class="fragment">Categorias <br/> Tags</td>
+                            <td class="fragment">---</td>
+                        
+                        </tr>
+                        <tr>
+                        
+                            <td class="fragment">Páginas</td>
+                            <td class="fragment">---</td>
+                            <td class="fragment">Ordem</td>
+                        
+                        </tr>
+                        <tr>
+                        
+                            <td class="fragment">Filmes</td>
+                            <td class="fragment">Gênero<br/>Sinopse<br/>Elenco<br/>Diretor<br/>Ano<br/>País ???</td>
+                            <td class="fragment">Gênero<br/>Sinopse<br/>Elenco<br/>Diretor<br/>Ano<br/>País ???</td>
+                        
+                        </tr>
+                    </tbody>
+                
+                </table>
+               
+            </section>
+            
+            <section>
+                <h2>Hierarquia de Templates</h2>
+                <a href="assets/hierarquia.png"><img src="assets/hierarquia.png" alt=""  ></a>
+            </section>
+            
+        </section>
+
+        <section>
+            <section>
+                <h2>Diálogo entre</h2>
+                <ul>
+                    <li>Sua arquitetura de informação</li>
+                    <li>Hierarquia de Templates</li>
+                    <li>Tabela de post types, taxonomias e meta-dados</li>
+                    
+                </ul>
+            </section>
+            
+            <section>
+                <h2>Montando a estrutura</h2>
+                <table>
+                
+                    <thead>
+                        <tr>
+                            <th>Post Types</th>
+                            <th>Taxonomias</th>
+                            <th>Meta-dados</th>
+                            <th>Templates</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                        
+                            <td>Posts</td>
+                            <td >Categorias <br/> Tags</td>
+                            <td >---</td>
+                            <td >index.php<br/>single.php</td>
+                        
+                        </tr>
+                        <tr>
+                        
+                            <td >Páginas</td>
+                            <td >---</td>
+                            <td >Ordem</td>
+                            <td >page.php</td>
+                        
+                        </tr>
+                        <tr>
+                        
+                            <td >Filmes</td>
+                            <td >Gênero<br/>Elenco<br/>Diretor<br/>Ano<br/>País</td>
+                            <td >Sinopse</td>
+                            <td >archive-filmes.php<br/>single-filmes.php<br/>archive-genero.php<br/>archive-diretor.php<br/>...</td>
+                        
+                        </tr>
+                        
+                    </tbody>
+                
+                </table>
+            </section>
+            
+            <section>
+                <h2>Montando a estrutura</h2>
+                <table>
+                
+                    <thead>
+                        <tr>
+                            <th>Post Types</th>
+                            <th>Taxonomias</th>
+                            <th>Meta-dados</th>
+                            <th>Templates</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        
+                        <tr class="fragment">
+                        
+                            <td >Home</td>
+                            <td ></td>
+                            <td ></td>
+                            <td >front-page.php</td>
+                        
+                        </tr>
+                        <tr class="fragment">
+                        
+                            <td >Resultado de busca</td>
+                            <td ></td>
+                            <td ></td>
+                            <td >search.php</td>
+                        
+                        </tr>
+                        <tr class="fragment">
+                        
+                            <td >Página não encontrada</td>
+                            <td ></td>
+                            <td ></td>
+                            <td >404.php</td>
+                        
+                        </tr>
+                    </tbody>
+                
+                </table>
+            </section>
+            
+            <section>
+                <h2>Quando usar post type ou categorias de post?</h2>
+            </section>
+            <section>
+                <ul>
+                    <li>Sempre dê preferência a post types</li>
+                    <ul>
+                        <li>Fica mais organizado</li>
+                        <li>É mais claro pro usuário</li>
+                        <li>URLs mais bonitas</li>
+                    </ul>
+                    <li>Quando se pode usar categoria de posts?</li>
+                    <ul>
+                        <li>Quando você quiser misturar dois conteúdos na mesma listage (mas é possível fazer com post type)</li>
+                    </ul>
+                </ul>
+            </section>
+            <section>
+                <h2>Quando usar taxonomia ou meta-dado?</h2>
+            </section>
+            <section>
+                <ul>
+                    <li>Taxonomia
+                        <ul>
+                            <li>Quando você quiser uma listagem automática</li>
+                            <li>Quando você quiser compartilhar valores entre posts</li>
+                        </ul>
+                    </li>
+                    <li>Meta dado
+                        <ul>
+                            <li>Quando for um conteúdo único e textual</li>
+                            <li>Quando você não quer que o usuário possa inventar novos valores</li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Para outras ocasiões</h2>
+                <p><b>Page Templates</b> ou <b>Custom Rewrite Rules</b></p>
+                
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Personalizando Listagens</h2>
+            </section>
+            <section>
+                
+                <p> <b>pre_get_posts()</b> e <b>WP_Query</b> </p>
+                
+            </section>
+            
+            <section>
+                <h2>Personalizando Listagens</h2>
+                <pre><code data-trim contenteditable>
+add_action('pre_get_posts', function($query) {
+
+  if ($query->is_post_type_archive('project') && $query->is_main_query()) {
+
+    $query->set('orderby', 'meta_value_num');
+    $query->set('meta_key', 'numero');
+    $query->set('order', 'ASC');
+  }
+});
+                </code></pre>
+            </section>
+            
+            <section>
+                <h2>Personalizando Listagens</h2>
+                <pre><code data-trim contenteditable>
+add_action('pre_get_posts', function($query) {
+
+  if ($query->is_post_type_archive('filmes') && $query->is_main_query()) {
+
+    $query->set('posts_per_page', -1);
+    $query->set('orderby', 'title');
+    $query->set('order', 'ASC');
+  }
+});
+                </code></pre>
+            </section>
+            
+            <section>
+                <h2>Loop personalizado</h2>
+                <pre><code data-trim contenteditable>
+&lt;?php
+$sections = new WP_Query(
+    array(
+        'post_type' => 'filmes',
+        'post_parent' => get_the_ID(),
+        'ignore_sticky_posts' => true,
+        'showposts' => -1,
+        'orderby' => 'title',
+        'order' => 'ASC'
+    )
+);
+?&gt;
+    &lt;?php if ($sections->have_posts()): ?&gt;
+        &lt;?php while ($sections->have_posts()): $sections->the_post(); ?&gt;
+            &lt;?php the_title(); ?&gt;
+            ...
+        &lt;?php endwhile; ?&gt;
+    &lt;?php endif; ?&gt;
+&lt;?php wp_reset_query(); ?&gt;
+                </code></pre>
+            </section>
+            
+            
+            
+        </section>
+        
+        <section>
+        
+            <section>
+                <h2>Recaptulando</h2>
+                
+                <ul>
+                
+                    <li class="fragment">Planejar sua arquitetura da informação</li>
+                    <li class="fragment">Definir quais post types, taxonomias e metadados serão usados</li>
+                    <li class="fragment">Definir e documentar os templates que devem ser criados</li>
+                    <li class="fragment">Definir e documentar se será necessário personalizar alguma listagem</li>
+                    <li class="fragment">Definir e documentar se algum template terá um Loop personalizado</li>
+                
+                </ul>
+                
+            </section>
+            
+            <section>
+                <h2>Recaptulando</h2>
+                
+                <ul>
+                
+                    <li class="fragment">Para não programadores</li>
+                    <ul>
+                        <li class="fragment">Usar plugins para criar PTs, taxonomias e metadados</li>
+                        <li class="fragment">Não ter medo de brincar com pre_get_posts e loops personalizados</li>
+                    </ul>
+                    <li class="fragment">Para programadores</li>
+                    <ul>
+                        <li class="fragment">Evitar o uso de plugins</li>
+                        <li class="fragment">pre_get_posts e Loops personalizados</li>
+                        <li class="fragment">Relação entre Post types</li>
+                    </ul>
+                    
+                </ul>
+                
+            </section>
+            
+            <section>
+            
+                <p>Adoraria ajudar com alguns casos concretos</p>
+                
+                <h2>Obrigado</h2>
+                
+                <p>leogermani@hacklab.com.br</p>
+                
+                <p></p>
+            
+            </section>
+        
+        </section>
+        
+
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+            { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+    });
+</script>
+</body>
+</html>
